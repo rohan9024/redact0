@@ -1,9 +1,17 @@
 {
   "name": "@rohan9024/redact0",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Zero-dependency reversible PII, secret, FHIR HIPAA Safe Harbor, and streaming SSE redactor for AI SDKs, MCP servers, Pino/Winston logs, and Edge runtimes.",
   "license": "MIT",
   "author": "rohan9024",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rohan9024/redact0.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rohan9024/redact0/issues"
+  },
+  "homepage": "https://github.com/rohan9024/redact0#readme",
   "publishConfig": {
     "access": "public"
   },
