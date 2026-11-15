@@ -1,6 +1,6 @@
 {
   "name": "@rohan9024/redact0",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Zero-dependency reversible PII, secret, FHIR HIPAA Safe Harbor, and streaming SSE redactor for AI SDKs, MCP servers, Pino/Winston logs, and Edge runtimes.",
   "license": "MIT",
   "author": "rohan9024",
