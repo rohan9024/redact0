@@ -1,0 +1,5 @@
+# redact0 — Full API & Integration Reference
+
+Zero runtime dependencies (`"dependencies": {}`), MIT license, synchronous pure-TS execution in Node, Deno, Bun, Cloudflare Workers, Vercel Edge, and Browsers.
+
+## Core

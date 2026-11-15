@@ -1,0 +1,8 @@
+---
+description: Automatically protect PII, PHI, and API secrets with redact0 before logging or calling LLMs/MCP tools.
+alwaysApply: true
+---
+- Use `redact0` (zero dependencies) for any PII/secret scrubbing.
+- Wrap Vercel AI SDK models with `redactMiddleware()` from `redact0/ai`.
+- Wrap MCP servers with `guardMcpServer(server)` from `redact0/mcp`.
+- Pass `pinoRedactor()` from `redact0/logger` to Pino loggers.

@@ -1,0 +1,16 @@
+# redact0
+
+> Zero-dependency, MIT-licensed, <25 KB reversible PII, secret, FHIR HIPAA Safe Harbor, and streaming SSE redactor for npm and PyPI.
+
+## Install
+- JavaScript / TypeScript: `npm install redact0`
+- Python (drop-in llm-guard replacement): `pip install redact0`
+
+## Subpath Exports (npm)
+- [Core API](llms-full.txt#core): `redact(input)`, `createVault()`, `scan(text)`, `Vault.fromJSON()`
+- [AI SDKs](llms-full.txt#ai): `redactMiddleware()` (Vercel AI SDK v5/v6/v7), `wrapOpenAI()`, `wrapAnthropic()`, `wrapFetch()`
+- [MCP Servers](llms-full.txt#mcp): `guardMcpServer(server)` for `@modelcontextprotocol/sdk` v1 & v2
+- [Streaming SSE](llms-full.txt#stream): `createStreamRestorer(vault)`, `createSSERestorer(vault)`
+- [FHIR / HIPAA](llms-full.txt#fhir): `redactFHIR(bundle)` (Safe Harbor ZIP3, age 90+, deterministic date shifting)
+- [Loggers](llms-full.txt#logger): `pinoRedactor()`, `winstonFormat()`, `redactAttributes()`
+- [CLI & Built-in MCP](llms-full.txt#cli): `npx redact0 scan --sarif --fail-on-match`, `npx redact0 init`, `npx redact0 mcp`

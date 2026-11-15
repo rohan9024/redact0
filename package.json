@@ -1,0 +1,96 @@
+{
+  "name": "@rohan9024/redact0",
+  "version": "1.0.0",
+  "description": "Zero-dependency reversible PII, secret, FHIR HIPAA Safe Harbor, and streaming SSE redactor for AI SDKs, MCP servers, Pino/Winston logs, and Edge runtimes.",
+  "license": "MIT",
+  "author": "redact0 contributors",
+  "keywords": [
+    "pii",
+    "redaction",
+    "redact",
+    "secrets",
+    "hipaa",
+    "phi",
+    "fhir",
+    "gdpr",
+    "ai-sdk",
+    "mcp",
+    "pino",
+    "winston",
+    "sse",
+    "streaming",
+    "reversible",
+    "zero-dependency",
+    "llm-security",
+    "openai",
+    "anthropic"
+  ],
+  "type": "module",
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "bin": {
+    "redact0": "./dist/cli.cjs"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    },
+    "./stream": {
+      "types": "./dist/stream.d.ts",
+      "import": "./dist/stream.mjs",
+      "require": "./dist/stream.cjs"
+    },
+    "./fhir": {
+      "types": "./dist/fhir.d.ts",
+      "import": "./dist/fhir.mjs",
+      "require": "./dist/fhir.cjs"
+    },
+    "./ai": {
+      "types": "./dist/ai.d.ts",
+      "import": "./dist/ai.mjs",
+      "require": "./dist/ai.cjs"
+    },
+    "./mcp": {
+      "types": "./dist/mcp.d.ts",
+      "import": "./dist/mcp.mjs",
+      "require": "./dist/mcp.cjs"
+    },
+    "./logger": {
+      "types": "./dist/logger.d.ts",
+      "import": "./dist/logger.mjs",
+      "require": "./dist/logger.cjs"
+    },
+    "./llms.txt": "./llms.txt",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist",
+    "llms.txt",
+    "llms-full.txt",
+    "context7.json",
+    "AGENTS.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "tsx --test tests/core.test.ts",
+    "check:size": "node -e \"const fs=require('fs'),zlib=require('zlib');const gz=zlib.gzipSync(fs.readFileSync('dist/index.mjs')).length;console.log('Core ESM gzip:',gz,'bytes');if(gz>30720)process.exit(1);\"",
+    "prepublishOnly": "npm run typecheck && npm run build && npm test && npm run check:size"
+  }
+}

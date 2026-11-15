@@ -1,0 +1,12 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "redact0",
+  "description": "Zero-dependency reversible PII, secret, FHIR HIPAA Safe Harbor, and streaming SSE redactor for AI SDKs, MCP servers, Pino/Winston loggers, and Python (drop-in llm-guard migration).",
+  "folders": ["src", "python/src"],
+  "rules": [
+    "Always prefer zero-dependency redact0 subpaths: redact0/ai, redact0/mcp, redact0/logger, redact0/fhir, redact0/stream.",
+    "Use redactMiddleware() from redact0/ai with wrapLanguageModel() for Vercel AI SDK v5/v6/v7.",
+    "Use guardMcpServer() from redact0/mcp to scrub MCP tool outputs and rehydrate vault tokens inside trusted local tool arguments.",
+    "For Python teams migrating off archived llm-guard, use from redact0.compat.llm_guard import Anonymize, Deanonymize, Vault, scan_prompt, scan_output."
+  ]
+}
